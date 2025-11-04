@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marina IA Chat - A Inteligência Artificial que Vende por Você</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0b0b0f;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #121218;
+      padding: 1.5rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
+    header h1 { font-size: 1.4rem; color: #00ffff; letter-spacing: 1px; }
+    header a {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    header a:hover { color: #00ffff; }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 5% 10%;
+      gap: 2rem;
+    }
+    .hero-left { flex: 1 1 500px; }
+    .hero-left h2 {
+      font-size: 2.5rem;
+      color: #00ffff;
+      margin-bottom: 1rem;
+    }
+    .hero-left p {
+      color: #ccc;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+    .hero-left button {
+      background: linear-gradient(90deg, #00ffff, #0077ff);
+      color: #000;
+      font-weight: 700;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: transform 0.3s;
+    }
+    .hero-left button:hover { transform: scale(1.05); }
+
+    .hero-right img {
+      width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    }
+
+    .modules {
+      background: #111;
+      padding: 5% 10%;
+      text-align: center;
+    }
+    .modules h2 {
+      color: #00ffff;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .module {
+      background: #1b1b25;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .module:hover {
+      transform: translateY(-5px);
+      background: #20202d;
+    }
+    .module h3 {
+      color: #00ffff;
+      margin-bottom: 0.8rem;
+    }
+    .module p {
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+
+    .price-section {
+      background: #0d0d12;
+      padding: 6% 10%;
+      text-align: center;
+    }
+    .price-section h2 {
+      color: #00ffff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .price-section p {
+      color: #ccc;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .price-card {
+      display: inline-block;
+      background: #1b1b25;
+      padding: 2rem 3rem;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+    }
+    .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #00ffff;
+      margin: 1rem 0;
+    }
+    .price-section button {
+      background: linear-gradient(90deg, #00ffff, #0077ff);
+      border: none;
+      color: #000;
+      padding: 1rem 2.5rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .price-section button:hover { transform: scale(1.05); }
+
+    .testimonials {
+      background: #111;
+      padding: 6% 10%;
+      text-align: center;
+    }
+    .testimonials h2 {
+      color: #00ffff;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .testimonial {
+      background: #1b1b25;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    }
+    .testimonial img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    .testimonial p {
+      font-size: 0.95rem;
+      color: #aaa;
+      margin-bottom: 0.8rem;
+    }
+    .testimonial strong { color: #00ffff; }
+
+    .cta {
+      text-align: center;
+      padding: 5%;
+      background: linear-gradient(90deg, #00ffff22, #0077ff22);
+    }
+    .cta h2 {
+      color: #00ffff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .cta p {
+      color: #ccc;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .cta button {
+      background: linear-gradient(90deg, #00ffff, #0077ff);
+      border: none;
+      color: #000;
+      padding: 1rem 2.5rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .cta button:hover { transform: scale(1.05); }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #0b0b0f;
+      border-top: 1px solid #111;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero { text-align: center; }
+      .hero-right img { width: 100%; max-width: 350px; }
+      .price-card { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Marina IA Chat 💬</h1>
+    <a href="#comprar">Quero Agora</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <h2>A IA que transforma conversas em vendas automáticas</h2>
+      <p>Conheça a <strong>Marina IA Chat</strong> — uma assistente inteligente que responde seus clientes, vende 24h por dia e aprende com suas mensagens. E o melhor: você aprende a criar sua própria IA personalizada com o nosso curso completo.</p>
+      <button id="comprar">Quero a Marina IA + Curso</button>
+    </div>
+    <div class="hero-right">
+      <img src="marina ia.jpg.png" alt="Marina IA Chat - Inteligência Artificial de vendas">
+    </div>
+  </section>
+
+  <section class="modules">
+    <h2>O que você vai aprender no curso</h2>
+    <div class="module-grid">
+      <div class="module">
+        <h3>Módulo 1 - Fundamentos da IA</h3>
+        <p>Aprenda como funcionam as IAs conversacionais e entenda como criar uma assistente inteligente que realmente vende.</p>
+      </div>
+      <div class="module">
+        <h3>Módulo 2 - Criação da Marina Chat</h3>
+        <p>Monte passo a passo sua própria IA usando OpenAI e personalize o comportamento, tom e aparência.</p>
+      </div>
+      <div class="module">
+        <h3>Módulo 3 - Integração com Manychat</h3>
+        <p>Conecte sua IA ao Instagram e WhatsApp para responder automaticamente leads e gerar mais vendas.</p>
+      </div>
+      <div class="module">
+        <h3>Módulo 4 - Copy & Vendas Automáticas</h3>
+        <p>Estratégias de copywriting e gatilhos mentais para transformar mensagens em conversões reais.</p>
+      </div>
+      <div class="module">
+        <h3>Módulo 5 - Modelos Prontos + Chat IA Exclusivo</h3>
+        <p>Receba templates prontos e a IA já configurada para começar a vender hoje mesmo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="price-section" id="comprar">
+    <h2>Invista no futuro das suas vendas 🚀</h2>
+    <p>Tenha acesso imediato à Marina IA Chat + Curso completo com suporte exclusivo.</p>
+    <div class="price-card">
+      <p><del>De R$ 497,00</del></p>
+      <p class="price">Por apenas R$ 197,00 💥</p>
+      <p>Pagamento único • Acesso vitalício • Suporte incluso</p>
+      <br>
+      <button>Garantir minha vaga agora</button>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>O que nossos alunos estão dizendo 💬</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <img src="https://i.pravatar.cc/60?img=3" alt="Depoimento 1">
+        <p>“A Marina fechou 3 vendas automáticas na primeira semana! É surreal ver a IA conversando com meus clientes.”</p>
+        <strong>— Luana M.</strong>
+      </div>
+      <div class="testimonial">
+        <img src="https://i.pravatar.cc/60?img=5" alt="Depoimento 2">
+        <p>“Eu não entendo nada de programação e consegui montar tudo com o curso. A IA ficou perfeita pro meu negócio.”</p>
+        <strong>— Ricardo A.</strong>
+      </div>
+      <div class="testimonial">
+        <img src="https://i.pravatar.cc/60?img=7" alt="Depoimento 3">
+        <p>“Valeu cada centavo. Agora meu atendimento é 24h e as respostas parecem humanas de verdade.”</p>
+        <strong>— Jéssica P.</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Garanta acesso hoje mesmo 🚀</h2>
+    <p>Tenha a Marina IA Chat + o Curso completo por um preço único e comece a automatizar suas vendas agora.</p>
+    <button>Quero a Marina Agora</button>
+  </section>
+
+  <footer>
+    <p>© 2025 Marina IA Chat — Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
