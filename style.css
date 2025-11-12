@@ -12,7 +12,7 @@ header {
 }
 
 h1 {
-  font-size: 2.5em; /* Letras Grandes */
+  font-size: 2.5em; /* Letras Grandes no Desktop */
   font-weight: 700;
 }
 
@@ -58,4 +58,48 @@ footer {
   text-align: center;
   padding: 40px 20px;
   color: #555;
+}
+
+/* ======================================= */
+/* ====== OTIMIZAÇÃO PARA MOBILE (Design Responsivo) ====== */
+/* ======================================= */
+
+@media (max-width: 600px) {
+  
+  /* Reduz o tamanho da fonte do Título Principal para caber melhor na tela */
+  h1 {
+    font-size: 1.8em;
+    line-height: 1.3;
+    padding: 0 10px; /* Adiciona um pequeno espaço nas laterais */
+  }
+
+  /* Reduz ligeiramente o tamanho da imagem da Marina */
+  .marina-img {
+    width: 250px;
+  }
+
+  /* Garante que o texto de descrição sob a imagem não estique demais */
+  header p {
+    padding: 0 15px;
+  }
+
+  /* Faz com que os botões (CTA) ocupem a largura total do celular, facilitando o clique */
+  a.cta {
+    width: 90%; 
+    max-width: 350px; /* Limita o tamanho máximo para não ficar estranho em tablets */
+    margin: 20px auto; /* Centraliza o botão */
+    box-sizing: border-box; /* Garante que o padding não estoure a largura */
+  }
+
+  /* Otimiza a visualização dos ícones e textos nas seções */
+  section h2 {
+    font-size: 1.8em;
+  }
+
+  /* Ajusta o grid de 4 colunas da seção "O Que Você Vai Dominar" para 1 coluna (empilhando) */
+  section > div[style*="display:grid"] {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
 }
