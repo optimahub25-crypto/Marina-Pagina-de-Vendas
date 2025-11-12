@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #0a0a0a;
+  background-color: #0a0a0a; /* Fundo Preto */
   color: #f1f1f1;
   margin: 0;
   padding: 0;
@@ -14,7 +14,7 @@ header {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.5em; /* Letras Grandes */
   font-weight: 700;
 }
 
@@ -60,4 +60,3 @@ footer {
   padding: 40px 20px;
   color: #555;
 }
-
